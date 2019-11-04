@@ -37,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
         entry.setOnKeyListener(new View.OnKeyListener() {
             @Override
             public boolean onKey(View view, int i, KeyEvent keyEvent) {
+                Log.d(TAG, "#View.OnKeyListener$onKey " + entry.getText().toString());
                 if (i == KeyEvent.KEYCODE_ENTER && keyEvent.getAction() == KeyEvent.ACTION_DOWN) {
                     String task = entry.getText().toString();
                     if(!"".equals(task)) {
@@ -51,7 +52,6 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
 
-                Log.d(TAG, "#View.OnKeyListener$onKey " + entry.getText().toString());
                 return false;
             }
         });
